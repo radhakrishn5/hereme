@@ -1,11 +1,11 @@
-public class EvenOdd {
-    public static void main(String[] args) {
-        int n = 10;
+import java.sql.*;
+import java.util.*;
 
-        if (n % 2 == 0) {
-            System.out.println(n + " is Even");
-        } else {
-            System.out.println(n + " is Odd");
-        }
-    }
+class V{
+  public static void main(String[]a)throws Exception{
+    Connection c=DriverManager.getConnection("jdbc:mysql://localhost/db","u","p");
+    Scanner s=new Scanner(System.in);
+    String u=s.nextLine();
+    c.createStatement().execute("SELECT * FROM users WHERE name='"+u+"'");
+  }
 }
